@@ -585,8 +585,12 @@ def cross_entropy_loss(probs, targets):
     # TODO: gather correct-token probs, take log, average the negatives
     return -1 * (sum(array_log(gather_correct_token_probs(probs, targets))) / len(targets))
 
-# Step 66 - derive_dlogits_on_paper (not yet solved)
-# TODO: implement
+# Step 66 - derive_dlogits_on_paper
+def derive_dlogits_on_paper():
+    """Return a string summarizing the derivation of dL/dlogits for mean cross-entropy."""
+    # TODO: return a short written derivation ending in dL/dlogits = (probs - onehot(targets)) / B
+    
+    return "to derive dL/dlogits we must look at the loss first function first which is negative log likelihood (negative sum of the target label's softmax divide by target count) dL/dlogits = (probs - onehot(targets)) / B"
 
 # Step 67 - compute_dlogits (not yet solved)
 # TODO: implement
