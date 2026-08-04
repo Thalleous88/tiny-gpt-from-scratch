@@ -592,8 +592,12 @@ def derive_dlogits_on_paper():
     
     return "to derive dL/dlogits we must look at the loss first function first which is negative log likelihood (negative sum of the target label's softmax divide by target count) dL/dlogits = (probs - onehot(targets)) / B"
 
-# Step 67 - compute_dlogits (not yet solved)
-# TODO: implement
+# Step 67 - compute_dlogits
+def compute_dlogits(probs, targets):
+    """Gradient of mean cross-entropy w.r.t. logits. probs: (B,V), targets: (B,)."""
+    # TODO: return dL/dlogits of shape (B, V) averaged over the batch.
+    
+    return (probs - one_hot_encode_batch(targets, len(probs[0]))) / len(targets)
 
 # Step 68 - derive_dw_on_paper (not yet solved)
 # TODO: implement
